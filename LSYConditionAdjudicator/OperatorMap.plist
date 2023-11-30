@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>&amp;&amp;</key>
+	<string>LSYConditionOperatorAnd</string>
+	<key>||</key>
+	<string>LSYConditionOperatorOr</string>
+	<key>startWith</key>
+	<string>LSYConditionOperatorStartWith</string>
+	<key>endWith</key>
+	<string>LSYConditionOperatorEndWith</string>
+	<key>isEqualToString</key>
+	<string>LSYConditionOperatorEqualToString</string>
+	<key>==</key>
+	<string>LSYConditionOperatorEqual</string>
+	<key>!=</key>
+	<string>LSYConditionOperatorNotEqual</string>
+	<key>&gt;</key>
+	<string>LSYConditionOperatorGreaterThan</string>
+	<key>&lt;</key>
+	<string>LSYConditionOperatorLessThan</string>
+	<key>&gt;=</key>
+	<string>LSYConditionOperatorNotLessThan</string>
+	<key>&lt;=</key>
+	<string>LSYConditionOperatorNotGreaterThan</string>
+	<key>in</key>
+	<string>LSYConditionOperatorIn</string>
+	<key>notIn</key>
+	<string>LSYConditionOperatorNotIn</string>
+</dict>
+</plist>

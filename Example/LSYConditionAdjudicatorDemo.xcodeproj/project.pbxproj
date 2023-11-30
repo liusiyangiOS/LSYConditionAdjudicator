@@ -1,0 +1,511 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		377A2A842B187D11006E264F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 377A2A832B187D11006E264F /* AppDelegate.m */; };
+		377A2A872B187D11006E264F /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 377A2A862B187D11006E264F /* SceneDelegate.m */; };
+		377A2A8A2B187D11006E264F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 377A2A892B187D11006E264F /* ViewController.m */; };
+		377A2A8D2B187D11006E264F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 377A2A8B2B187D11006E264F /* Main.storyboard */; };
+		377A2A8F2B187D14006E264F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 377A2A8E2B187D14006E264F /* Assets.xcassets */; };
+		377A2A922B187D14006E264F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 377A2A902B187D14006E264F /* LaunchScreen.storyboard */; };
+		377A2A952B187D14006E264F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 377A2A942B187D14006E264F /* main.m */; };
+		377A2A9F2B187F61006E264F /* Refer.m in Sources */ = {isa = PBXBuildFile; fileRef = 377A2A9C2B187F61006E264F /* Refer.m */; };
+		377A2AA02B187F61006E264F /* Invitation.m in Sources */ = {isa = PBXBuildFile; fileRef = 377A2A9D2B187F61006E264F /* Invitation.m */; };
+		377A2AB32B187F83006E264F /* OperatorMap.plist in Resources */ = {isa = PBXBuildFile; fileRef = 377A2AA32B187F83006E264F /* OperatorMap.plist */; };
+		377A2AB42B187F83006E264F /* LSYConditionOperatorAnd.m in Sources */ = {isa = PBXBuildFile; fileRef = 377A2AA82B187F83006E264F /* LSYConditionOperatorAnd.m */; };
+		377A2AB52B187F83006E264F /* LSYConditionOperatorStringComparison.m in Sources */ = {isa = PBXBuildFile; fileRef = 377A2AA92B187F83006E264F /* LSYConditionOperatorStringComparison.m */; };
+		377A2AB62B187F83006E264F /* LSYConditionOperatorInOrNot.m in Sources */ = {isa = PBXBuildFile; fileRef = 377A2AAD2B187F83006E264F /* LSYConditionOperatorInOrNot.m */; };
+		377A2AB72B187F83006E264F /* LSYConditionOperatorNumberComparison.m in Sources */ = {isa = PBXBuildFile; fileRef = 377A2AAE2B187F83006E264F /* LSYConditionOperatorNumberComparison.m */; };
+		377A2AB82B187F83006E264F /* LSYConditionOperatorEqualOrNot.m in Sources */ = {isa = PBXBuildFile; fileRef = 377A2AB02B187F83006E264F /* LSYConditionOperatorEqualOrNot.m */; };
+		377A2AB92B187F83006E264F /* LSYConditionOperatorOr.m in Sources */ = {isa = PBXBuildFile; fileRef = 377A2AB12B187F83006E264F /* LSYConditionOperatorOr.m */; };
+		377A2ABA2B187F83006E264F /* LSYConditionAdjudicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 377A2AB22B187F83006E264F /* LSYConditionAdjudicator.m */; };
+		CD39FE8DB69D37405BC318F1 /* Pods_LSYConditionAdjudicatorDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E8792289A8AEF601BC2CE48 /* Pods_LSYConditionAdjudicatorDemo.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0E8792289A8AEF601BC2CE48 /* Pods_LSYConditionAdjudicatorDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LSYConditionAdjudicatorDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		377A2A7F2B187D11006E264F /* LSYConditionAdjudicatorDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LSYConditionAdjudicatorDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		377A2A822B187D11006E264F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		377A2A832B187D11006E264F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		377A2A852B187D11006E264F /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		377A2A862B187D11006E264F /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		377A2A882B187D11006E264F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		377A2A892B187D11006E264F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		377A2A8C2B187D11006E264F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		377A2A8E2B187D14006E264F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		377A2A912B187D14006E264F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		377A2A932B187D14006E264F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		377A2A942B187D14006E264F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		377A2A9B2B187F61006E264F /* Invitation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Invitation.h; sourceTree = "<group>"; };
+		377A2A9C2B187F61006E264F /* Refer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Refer.m; sourceTree = "<group>"; };
+		377A2A9D2B187F61006E264F /* Invitation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Invitation.m; sourceTree = "<group>"; };
+		377A2A9E2B187F61006E264F /* Refer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Refer.h; sourceTree = "<group>"; };
+		377A2AA22B187F83006E264F /* LSYConditionOperator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSYConditionOperator.h; sourceTree = "<group>"; };
+		377A2AA32B187F83006E264F /* OperatorMap.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = OperatorMap.plist; sourceTree = "<group>"; };
+		377A2AA42B187F83006E264F /* LSYConditionAdjudicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSYConditionAdjudicator.h; sourceTree = "<group>"; };
+		377A2AA62B187F83006E264F /* LSYConditionOperatorNumberComparison.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSYConditionOperatorNumberComparison.h; sourceTree = "<group>"; };
+		377A2AA72B187F83006E264F /* LSYConditionOperatorInOrNot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSYConditionOperatorInOrNot.h; sourceTree = "<group>"; };
+		377A2AA82B187F83006E264F /* LSYConditionOperatorAnd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSYConditionOperatorAnd.m; sourceTree = "<group>"; };
+		377A2AA92B187F83006E264F /* LSYConditionOperatorStringComparison.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSYConditionOperatorStringComparison.m; sourceTree = "<group>"; };
+		377A2AAA2B187F83006E264F /* LSYConditionOperatorOr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSYConditionOperatorOr.h; sourceTree = "<group>"; };
+		377A2AAB2B187F83006E264F /* LSYConditionOperatorEqualOrNot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSYConditionOperatorEqualOrNot.h; sourceTree = "<group>"; };
+		377A2AAC2B187F83006E264F /* LSYConditionOperatorAnd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSYConditionOperatorAnd.h; sourceTree = "<group>"; };
+		377A2AAD2B187F83006E264F /* LSYConditionOperatorInOrNot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSYConditionOperatorInOrNot.m; sourceTree = "<group>"; };
+		377A2AAE2B187F83006E264F /* LSYConditionOperatorNumberComparison.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSYConditionOperatorNumberComparison.m; sourceTree = "<group>"; };
+		377A2AAF2B187F83006E264F /* LSYConditionOperatorStringComparison.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSYConditionOperatorStringComparison.h; sourceTree = "<group>"; };
+		377A2AB02B187F83006E264F /* LSYConditionOperatorEqualOrNot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSYConditionOperatorEqualOrNot.m; sourceTree = "<group>"; };
+		377A2AB12B187F83006E264F /* LSYConditionOperatorOr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSYConditionOperatorOr.m; sourceTree = "<group>"; };
+		377A2AB22B187F83006E264F /* LSYConditionAdjudicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSYConditionAdjudicator.m; sourceTree = "<group>"; };
+		65A220F8724A740ED0640988 /* Pods-LSYConditionAdjudicatorDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LSYConditionAdjudicatorDemo.release.xcconfig"; path = "Target Support Files/Pods-LSYConditionAdjudicatorDemo/Pods-LSYConditionAdjudicatorDemo.release.xcconfig"; sourceTree = "<group>"; };
+		8FE5236108A5327F2C952F01 /* Pods-LSYConditionAdjudicatorDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LSYConditionAdjudicatorDemo.debug.xcconfig"; path = "Target Support Files/Pods-LSYConditionAdjudicatorDemo/Pods-LSYConditionAdjudicatorDemo.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		377A2A7C2B187D11006E264F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD39FE8DB69D37405BC318F1 /* Pods_LSYConditionAdjudicatorDemo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		098CC76D909DDD93F14CACF7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0E8792289A8AEF601BC2CE48 /* Pods_LSYConditionAdjudicatorDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2C115FBB8E49DFEE71673058 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8FE5236108A5327F2C952F01 /* Pods-LSYConditionAdjudicatorDemo.debug.xcconfig */,
+				65A220F8724A740ED0640988 /* Pods-LSYConditionAdjudicatorDemo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		377A2A762B187D11006E264F = {
+			isa = PBXGroup;
+			children = (
+				377A2A812B187D11006E264F /* LSYConditionAdjudicatorDemo */,
+				377A2A802B187D11006E264F /* Products */,
+				2C115FBB8E49DFEE71673058 /* Pods */,
+				098CC76D909DDD93F14CACF7 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		377A2A802B187D11006E264F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				377A2A7F2B187D11006E264F /* LSYConditionAdjudicatorDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		377A2A812B187D11006E264F /* LSYConditionAdjudicatorDemo */ = {
+			isa = PBXGroup;
+			children = (
+				377A2AA12B187F83006E264F /* LSYConditionAdjudicator */,
+				377A2A9B2B187F61006E264F /* Invitation.h */,
+				377A2A9D2B187F61006E264F /* Invitation.m */,
+				377A2A9E2B187F61006E264F /* Refer.h */,
+				377A2A9C2B187F61006E264F /* Refer.m */,
+				377A2A822B187D11006E264F /* AppDelegate.h */,
+				377A2A832B187D11006E264F /* AppDelegate.m */,
+				377A2A852B187D11006E264F /* SceneDelegate.h */,
+				377A2A862B187D11006E264F /* SceneDelegate.m */,
+				377A2A882B187D11006E264F /* ViewController.h */,
+				377A2A892B187D11006E264F /* ViewController.m */,
+				377A2A8B2B187D11006E264F /* Main.storyboard */,
+				377A2A8E2B187D14006E264F /* Assets.xcassets */,
+				377A2A902B187D14006E264F /* LaunchScreen.storyboard */,
+				377A2A932B187D14006E264F /* Info.plist */,
+				377A2A942B187D14006E264F /* main.m */,
+			);
+			path = LSYConditionAdjudicatorDemo;
+			sourceTree = "<group>";
+		};
+		377A2AA12B187F83006E264F /* LSYConditionAdjudicator */ = {
+			isa = PBXGroup;
+			children = (
+				377A2AA52B187F83006E264F /* Operator */,
+				377A2AA32B187F83006E264F /* OperatorMap.plist */,
+				377A2AA42B187F83006E264F /* LSYConditionAdjudicator.h */,
+				377A2AB22B187F83006E264F /* LSYConditionAdjudicator.m */,
+				377A2AA22B187F83006E264F /* LSYConditionOperator.h */,
+			);
+			name = LSYConditionAdjudicator;
+			path = ../../LSYConditionAdjudicator;
+			sourceTree = "<group>";
+		};
+		377A2AA52B187F83006E264F /* Operator */ = {
+			isa = PBXGroup;
+			children = (
+				377A2AAC2B187F83006E264F /* LSYConditionOperatorAnd.h */,
+				377A2AA82B187F83006E264F /* LSYConditionOperatorAnd.m */,
+				377A2AAB2B187F83006E264F /* LSYConditionOperatorEqualOrNot.h */,
+				377A2AB02B187F83006E264F /* LSYConditionOperatorEqualOrNot.m */,
+				377A2AA72B187F83006E264F /* LSYConditionOperatorInOrNot.h */,
+				377A2AAD2B187F83006E264F /* LSYConditionOperatorInOrNot.m */,
+				377A2AA62B187F83006E264F /* LSYConditionOperatorNumberComparison.h */,
+				377A2AAE2B187F83006E264F /* LSYConditionOperatorNumberComparison.m */,
+				377A2AAA2B187F83006E264F /* LSYConditionOperatorOr.h */,
+				377A2AB12B187F83006E264F /* LSYConditionOperatorOr.m */,
+				377A2AAF2B187F83006E264F /* LSYConditionOperatorStringComparison.h */,
+				377A2AA92B187F83006E264F /* LSYConditionOperatorStringComparison.m */,
+			);
+			path = Operator;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		377A2A7E2B187D11006E264F /* LSYConditionAdjudicatorDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 377A2A982B187D14006E264F /* Build configuration list for PBXNativeTarget "LSYConditionAdjudicatorDemo" */;
+			buildPhases = (
+				479BC68A880E25EC218772B0 /* [CP] Check Pods Manifest.lock */,
+				377A2A7B2B187D11006E264F /* Sources */,
+				377A2A7C2B187D11006E264F /* Frameworks */,
+				377A2A7D2B187D11006E264F /* Resources */,
+				4388128761B72AA432671812 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LSYConditionAdjudicatorDemo;
+			productName = LSYConditionAdjudicatorDemo;
+			productReference = 377A2A7F2B187D11006E264F /* LSYConditionAdjudicatorDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		377A2A772B187D11006E264F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					377A2A7E2B187D11006E264F = {
+						CreatedOnToolsVersion = 14.2;
+					};
+				};
+			};
+			buildConfigurationList = 377A2A7A2B187D11006E264F /* Build configuration list for PBXProject "LSYConditionAdjudicatorDemo" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 377A2A762B187D11006E264F;
+			productRefGroup = 377A2A802B187D11006E264F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				377A2A7E2B187D11006E264F /* LSYConditionAdjudicatorDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		377A2A7D2B187D11006E264F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				377A2A922B187D14006E264F /* LaunchScreen.storyboard in Resources */,
+				377A2AB32B187F83006E264F /* OperatorMap.plist in Resources */,
+				377A2A8F2B187D14006E264F /* Assets.xcassets in Resources */,
+				377A2A8D2B187D11006E264F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4388128761B72AA432671812 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LSYConditionAdjudicatorDemo/Pods-LSYConditionAdjudicatorDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LSYConditionAdjudicatorDemo/Pods-LSYConditionAdjudicatorDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LSYConditionAdjudicatorDemo/Pods-LSYConditionAdjudicatorDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		479BC68A880E25EC218772B0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LSYConditionAdjudicatorDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		377A2A7B2B187D11006E264F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				377A2AB52B187F83006E264F /* LSYConditionOperatorStringComparison.m in Sources */,
+				377A2AB82B187F83006E264F /* LSYConditionOperatorEqualOrNot.m in Sources */,
+				377A2AA02B187F61006E264F /* Invitation.m in Sources */,
+				377A2AB72B187F83006E264F /* LSYConditionOperatorNumberComparison.m in Sources */,
+				377A2A8A2B187D11006E264F /* ViewController.m in Sources */,
+				377A2A842B187D11006E264F /* AppDelegate.m in Sources */,
+				377A2A952B187D14006E264F /* main.m in Sources */,
+				377A2AB42B187F83006E264F /* LSYConditionOperatorAnd.m in Sources */,
+				377A2A9F2B187F61006E264F /* Refer.m in Sources */,
+				377A2AB92B187F83006E264F /* LSYConditionOperatorOr.m in Sources */,
+				377A2ABA2B187F83006E264F /* LSYConditionAdjudicator.m in Sources */,
+				377A2A872B187D11006E264F /* SceneDelegate.m in Sources */,
+				377A2AB62B187F83006E264F /* LSYConditionOperatorInOrNot.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		377A2A8B2B187D11006E264F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				377A2A8C2B187D11006E264F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		377A2A902B187D14006E264F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				377A2A912B187D14006E264F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		377A2A962B187D14006E264F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		377A2A972B187D14006E264F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		377A2A992B187D14006E264F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8FE5236108A5327F2C952F01 /* Pods-LSYConditionAdjudicatorDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LSYConditionAdjudicatorDemo/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = lsy.LSYConditionAdjudicatorDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		377A2A9A2B187D14006E264F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 65A220F8724A740ED0640988 /* Pods-LSYConditionAdjudicatorDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LSYConditionAdjudicatorDemo/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = lsy.LSYConditionAdjudicatorDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		377A2A7A2B187D11006E264F /* Build configuration list for PBXProject "LSYConditionAdjudicatorDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				377A2A962B187D14006E264F /* Debug */,
+				377A2A972B187D14006E264F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		377A2A982B187D14006E264F /* Build configuration list for PBXNativeTarget "LSYConditionAdjudicatorDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				377A2A992B187D14006E264F /* Debug */,
+				377A2A9A2B187D14006E264F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 377A2A772B187D11006E264F /* Project object */;
+}

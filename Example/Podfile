@@ -1,0 +1,14 @@
+platform :ios, "9.0"
+workspace       "LSYConditionAdjudicatorDemo"
+project "LSYConditionAdjudicatorDemo.xcodeproj"
+
+
+
+target "LSYConditionAdjudicatorDemo" do
+project "LSYConditionAdjudicatorDemo.xcodeproj"
+use_frameworks!
+
+pod 'YYModel',       '~> 1.0.4'
+
+end
+
