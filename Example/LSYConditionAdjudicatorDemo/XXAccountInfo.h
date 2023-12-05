@@ -6,13 +6,13 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Invitation.h"
+#import "XXUserInfo.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Refer : NSObject
+@interface XXAccountInfo : NSObject
 
-@property (strong, nonatomic) Invitation *invitation;
+@property (strong, nonatomic) XXUserInfo *userInfo;
 
 @property (strong, nonatomic) NSDictionary *params;
 

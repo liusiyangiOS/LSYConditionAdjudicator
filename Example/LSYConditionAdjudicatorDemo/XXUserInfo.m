@@ -1,12 +1,12 @@
 //
-//  Refer.m
+//  XXUserInfo.m
 //  LSYConditionAdjudicator
 //
 //  Created by 刘思洋 on 2022/10/25.
 //
 
-#import "Refer.h"
+#import "XXUserInfo.h"
 
-@implementation Refer
+@implementation XXUserInfo
 
 @end

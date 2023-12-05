@@ -1,12 +1,12 @@
 //
-//  Invitation.m
+//  Refer.m
 //  LSYConditionAdjudicator
 //
 //  Created by 刘思洋 on 2022/10/25.
 //
 
-#import "Invitation.h"
+#import "XXAccountInfo.h"
 
-@implementation Invitation
+@implementation XXAccountInfo
 
 @end

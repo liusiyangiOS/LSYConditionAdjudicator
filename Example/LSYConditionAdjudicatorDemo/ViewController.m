@@ -8,13 +8,13 @@
 #import "ViewController.h"
 #import "LSYOldConditionAdjudicator.h"
 #import "LSYConditionAdjudicator.h"
-#import "Refer.h"
+#import "XXAccountInfo.h"
 #import <YYModel/YYModel.h>
 
 @interface ViewController ()<UITextViewDelegate>{
     //上下文
     NSDictionary *_context;
-    Refer *_target;
+    XXAccountInfo *_target;
     UITextView *_textView;
     UILabel *_resultLabel;
 }
@@ -31,30 +31,30 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    Refer *refer = [Refer new];
-    refer.params = @{
+    XXAccountInfo *accountInfo = [XXAccountInfo new];
+    accountInfo.params = @{
         @"name":@"Tom",
         @"age":@"18"
     };
     
-    Invitation *invitation = [Invitation new];
-    invitation.rootcateid = 555;
-    invitation.role = 2;
-    invitation.scene = @"job_detait";
-    invitation.cate_extra = @{
-        @"biz_mode":@"normal mode",
-        @"c_chatid":@"",
-        @"newrootcateid":@(674)
+    XXUserInfo *userInfo = [XXUserInfo new];
+    userInfo.udid = 555;
+    userInfo.vipLevel = 2;
+    userInfo.scene = @"scene_1";
+    userInfo.extraInfo = @{
+        @"mode":@"normal mode",
+        @"favoriteFood":@"",
+        @"unreadCount":@(74)
     };
-    refer.invitation = invitation;
+    accountInfo.userInfo = userInfo;
     
-    _target = refer;
+    _target = accountInfo;
     _context = @{
         @"TargetUid":@"1111",
         @"source":@"5"
     };
     
-    NSString *content = [NSString stringWithFormat:@"Refer:%@\nContext:%@",[[refer yy_modelToJSONObject] description],_context.description];
+    NSString *content = [NSString stringWithFormat:@"AccountInfo:%@\nContext:%@",[[accountInfo yy_modelToJSONObject] description],_context.description];
     
     UILabel *contentLabel = [UILabel new];
     contentLabel.numberOfLines = 0;
@@ -76,9 +76,8 @@
     _textView.layer.borderWidth = 1;
     _textView.font = [UIFont systemFontOfSize:16];
     _textView.delegate = self;
-//    _textView.text = @"$var{invitation.cate_extra.biz_mode} == normal$space{}mode && $var{invitation} != ${null}";
-    _textView.text = @" ( ( $var{params.name} == Tom && $var{params.age} > 20 ) || ( $var{invitation.rootcateid} in 574,577 && $var{invitation.role} notIn 1,3 ) ) && $var{invitation.scene} startWith job_ && $var{invitation.cate_extra.biz_mode} isEqualToString normal$space{}mode && $var{invitation.cateid} != ${null} && $context{TargetUid} isEqualToString 1111";
-//    _textView.text = @"$var{mode} == normal$space{}mode && $var{invitation} != ${null}";
+    _textView.text = @" ( ( $var{params.name} == Tom && $var{params.age} > 20 ) || ( $var{userInfo.udid} in 574,577 && $var{userInfo.vipLevel} notIn 1,3 ) ) && $var{userInfo.scene} startWith scene_ && $var{userInfo.extraInfo.mode} isEqualToString normal$space{}mode && $var{userInfo.udid} != ${null} && $context{TargetUid} isEqualToString 1111";
+//    _textView.text = @"$var{mode} == normal$space{}mode && $var{userInfo} != ${null}";
     [self.view addSubview:_textView];
     currentY += 160;
         
