@@ -1,29 +1,14 @@
 //
-//  LSYConditionAdjudicator.m
-//  LSYConditionAdjudicatorDemo
+//  LSYOldConditionAdjudicator.m
+//  LSYConditionAdjudicator
 //
-//  Created by liusiyang on 2023/12/1.
+//  Created by 刘思洋 on 2022/10/21.
 //
 
-#import "LSYConditionAdjudicator.h"
+#import "LSYOldConditionAdjudicator.h"
 #import "LSYConditionOperator.h"
 
-@interface LSYOperateNode : NSObject
-
-//节点值
-@property (strong, nonatomic) id value;
-//左子树
-@property (strong, nonatomic) id left;
-//右子树
-@property (strong, nonatomic) id right;
-
-@end
-
-@implementation LSYOperateNode
-
-@end
-
-@implementation LSYConditionAdjudicator
+@implementation LSYOldConditionAdjudicator
 
 + (BOOL)calculateWithExpressionString:(NSString *)expressionString
                                target:(id)target
@@ -37,6 +22,21 @@
 }
 
 #pragma mark - private method
+
++ (NSDictionary<NSString *,id<LSYConditionOperator>> *)operatorMap{
+    static NSDictionary *operatorMap = nil;
+    if (!operatorMap) {
+        NSString *path = [NSBundle.mainBundle pathForResource:@"OperatorMap" ofType:@"plist"];
+        NSDictionary *originMap = [NSDictionary dictionaryWithContentsOfFile:path];
+        NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithCapacity:originMap.count];
+        for (NSString *operatorStr in originMap.allKeys) {
+            id<LSYConditionOperator> operator = [NSClassFromString(originMap[operatorStr]) new];
+            [dic setObject:operator forKey:operatorStr];
+        }
+        operatorMap = dic.copy;
+    }
+    return operatorMap;
+}
 
 + (NSArray *)postfixExpressionArrayWithString:(NSString *)expressionString error:(NSError **)error{
     NSMutableArray *array = [expressionString componentsSeparatedByString:@" "].mutableCopy;
@@ -110,49 +110,6 @@
                                      target:(id)target
                                     context:(NSDictionary *)context
                                       error:(NSError **)error{
-    if (array.count == 1) {
-        id result = [self parseOperand:array.firstObject withTarget:target context:context];
-        if ([result isKindOfClass:NSNumber.class] ||
-            [result isKindOfClass:NSString.class]) {
-            return [result boolValue];
-        }
-        //表达式错误
-        *error = [NSError errorWithDomain:@"com.lsy.PostfixExpression" code:-1 userInfo:@{
-            NSLocalizedDescriptionKey:@"表达式错误,非有效的表达式",
-        }];
-        return NO;
-    }
-    LSYOperateNode *tree = [self operateTreeWithPostfixExpressionArray:array error:error];
-    if (!tree) {
-        return NO;
-    }
-    return [self calculateNode:tree withTarget:target context:context error:error];
-}
-
-+ (NSDictionary<NSString *,id<LSYConditionOperator>> *)operatorMap{
-    static NSDictionary *operatorMap = nil;
-    if (!operatorMap) {
-        NSString *path = [NSBundle.mainBundle pathForResource:@"OperatorMap" ofType:@"plist"];
-        NSDictionary *originMap = [NSDictionary dictionaryWithContentsOfFile:path];
-        NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithCapacity:originMap.count];
-        for (NSString *operatorStr in originMap.allKeys) {
-            id<LSYConditionOperator> operator = [NSClassFromString(originMap[operatorStr]) new];
-            [dic setObject:operator forKey:operatorStr];
-        }
-        operatorMap = dic.copy;
-    }
-    return operatorMap;
-}
-
-/* 生成二叉树 */
-+ (LSYOperateNode *)operateTreeWithPostfixExpressionArray:(NSArray *)array error:(NSError **)error{
-    if (array.count < 3) {
-        //表达式错误
-        *error = [NSError errorWithDomain:@"com.lsy.PostfixExpression" code:-1 userInfo:@{
-            NSLocalizedDescriptionKey:@"表达式错误,非有效的表达式",
-        }];
-        return nil;
-    }
     NSMutableArray *stack = [NSMutableArray arrayWithCapacity:array.count / 2];
     for (int i = 0; i < array.count; i++) {
         NSString *item = array[i];
@@ -163,18 +120,43 @@
                 *error = [NSError errorWithDomain:@"com.lsy.PostfixExpression" code:-1 userInfo:@{
                     NSLocalizedDescriptionKey:@"表达式错误,缺少运算数",
                 }];
-                return nil;
+                return NO;
             }
-            LSYOperateNode *node = [[LSYOperateNode alloc] init];
-            node.value = item;
             //取出右运算符
-            node.right = stack.lastObject;
+            id rightOperand = stack.lastObject;
             [stack removeLastObject];
+            NSLog(@"Origin right operand: %@ \n",rightOperand);
+            //解析右运算符
+            rightOperand = [self parseOperand:rightOperand withTarget:target context:context];
+            id<LSYConditionOperator> operator = [[self operatorMap] objectForKey:item];
+            //转化右运算符的类型
+            if ([operator respondsToSelector:@selector(rightOperandType)]) {
+                rightOperand = [self transformOperand:rightOperand withType:[operator rightOperandType] operatorStr:item isLeftOperand:NO error:error];
+                if (*error) {
+                    return NO;
+                }
+            }
+            
             //取出左运算符
-            node.left = stack.lastObject;
+            id leftOperand = stack.lastObject;
             [stack removeLastObject];
-
-            [stack addObject:node];
+            NSLog(@"Origin left operand: %@ \n",leftOperand);
+            //解析左运算符
+            leftOperand = [self parseOperand:leftOperand withTarget:target context:context];
+            //转化左运算符的类型
+            if ([operator respondsToSelector:@selector(leftOperandType)]) {
+                leftOperand = [self transformOperand:leftOperand withType:[operator leftOperandType] operatorStr:item isLeftOperand:YES error:error];
+                if (*error) {
+                    return NO;
+                }
+            }
+            
+            BOOL result = [operator calculateWithLeftOperand:leftOperand rightOperand:rightOperand error:error];
+            NSLog(@"-> %@ %@ %@ = %d \n=======",leftOperand,item,rightOperand,result);
+            if (*error) {
+                return NO;
+            }
+            [stack addObject:@(result)];
         }else{
             //遇到操作数压入栈中
             [stack addObject:item];
@@ -185,66 +167,16 @@
         *error = [NSError errorWithDomain:@"com.lsy.PostfixExpression" code:-1 userInfo:@{
             NSLocalizedDescriptionKey:@"表达式错误,缺少运算符",
         }];
-        return nil;
-    }
-    return stack.lastObject;
-}
-
-+ (BOOL)calculateNode:(LSYOperateNode *)node withTarget:(id)target context:(NSDictionary *)context error:(NSError **)error{
-    id<LSYConditionOperator> operator = [[self operatorMap] objectForKey:node.value];
-    id leftOperand = nil;
-    if ([node.left isKindOfClass:LSYOperateNode.class]) {
-        leftOperand = @([self calculateNode:node.left withTarget:target context:context error:error]);
-    }else{
-        //解析左运算符
-        leftOperand = [self parseOperand:node.left withTarget:target context:context];
-        //转化左运算符的类型
-        if ([operator respondsToSelector:@selector(leftOperandType)]) {
-            leftOperand = [self transformOperand:leftOperand withType:[operator leftOperandType] operatorStr:node.value isLeftOperand:YES error:error];
-        }
-    }
-    if (*error) {
         return NO;
     }
-
-    if ([node.value isEqualToString:@"&&"]) {
-        if (![leftOperand boolValue]) {
-            return NO;
-        }
-    }else if ([node.value isEqualToString:@"||"]){
-        if ([leftOperand boolValue]) {
-            return YES;
-        }
-    }
-    
-    id rightOperand = nil;
-    if ([node.right isKindOfClass:LSYOperateNode.class]) {
-        rightOperand = @([self calculateNode:node.right withTarget:target context:context error:error]);
-    }else{
-        //解析右运算符
-        rightOperand = [self parseOperand:node.right withTarget:target context:context];
-        //转化右运算符的类型
-        if ([operator respondsToSelector:@selector(rightOperandType)]) {
-            rightOperand = [self transformOperand:rightOperand withType:[operator rightOperandType] operatorStr:node.value isLeftOperand:NO error:error];
-        }
-    }
-    if (*error) {
+    if (![stack.lastObject isKindOfClass:NSNumber.class]) {
+        //表达式错误
+        *error = [NSError errorWithDomain:@"com.lsy.PostfixExpression" code:-1 userInfo:@{
+            NSLocalizedDescriptionKey:@"表达式错误,运算结果不是bool类型",
+        }];
         return NO;
     }
-    
-    if ([node.value isEqualToString:@"&&"] ||
-        [node.value isEqualToString:@"||"]) {
-        return [rightOperand boolValue];
-    }
-    
-    BOOL result = [operator calculateWithLeftOperand:leftOperand rightOperand:rightOperand error:error];
-//    NSLog(@"Origin left operand: %@ \n",node.left);
-//    NSLog(@"Origin right operand: %@ \n",node.right);
-//    NSLog(@"-> %@ %@ %@ = %d \n=======",leftOperand,node.value,rightOperand,result);
-    if (*error) {
-        return NO;
-    }
-    return result;
+    return [stack.lastObject boolValue];
 }
 
 //解析运算符

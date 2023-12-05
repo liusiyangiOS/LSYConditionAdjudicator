@@ -6,6 +6,7 @@
 //
 
 #import "ViewController.h"
+#import "LSYOldConditionAdjudicator.h"
 #import "LSYConditionAdjudicator.h"
 #import "Refer.h"
 #import <YYModel/YYModel.h>
@@ -82,14 +83,26 @@
     currentY += 160;
         
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    button.frame = CGRectMake(10, currentY, UIScreen.mainScreen.bounds.size.width - 20, 40);
-    [button setTitle:@"计算结果" forState:UIControlStateNormal];
+    button.tag = 100;
+    button.frame = CGRectMake(10, currentY, (UIScreen.mainScreen.bounds.size.width - 30)/2, 40);
+    [button setTitle:@"计算结果(v0)" forState:UIControlStateNormal];
     [button setTitleColor:UIColor.blueColor forState:UIControlStateNormal];
-    [button addTarget:self action:@selector(calculateButtonClicked) forControlEvents:UIControlEventTouchUpInside];
+    [button addTarget:self action:@selector(calculateButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     button.layer.cornerRadius = 5;
     button.layer.borderColor = UIColor.blueColor.CGColor;
     button.layer.borderWidth = 1;
     [self.view addSubview:button];
+    
+    UIButton *buttonV1 = [UIButton buttonWithType:UIButtonTypeCustom];
+    buttonV1.tag = 101;
+    buttonV1.frame = CGRectMake(UIScreen.mainScreen.bounds.size.width/2 + 5, currentY, (UIScreen.mainScreen.bounds.size.width - 30)/2, 40);
+    [buttonV1 setTitle:@"计算结果(v1)" forState:UIControlStateNormal];
+    [buttonV1 setTitleColor:UIColor.blueColor forState:UIControlStateNormal];
+    [buttonV1 addTarget:self action:@selector(calculateButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    buttonV1.layer.cornerRadius = 5;
+    buttonV1.layer.borderColor = UIColor.blueColor.CGColor;
+    buttonV1.layer.borderWidth = 1;
+    [self.view addSubview:buttonV1];
     currentY += 40;
     
     _resultLabel = [UILabel new];
@@ -101,9 +114,18 @@
 
 #pragma mark - action method
 
-- (void)calculateButtonClicked{
+- (void)calculateButtonClicked:(UIButton *)sender{
     NSError *error = nil;
-    BOOL result = [LSYConditionAdjudicator calculateWithExpressionString:_textView.text target:_target context:_context error:&error];
+    
+    NSTimeInterval startTime = [NSDate.date timeIntervalSince1970];
+    BOOL result = NO;
+    if (sender.tag - 100 == 0) {
+        result = [LSYOldConditionAdjudicator calculateWithExpressionString:_textView.text target:_target context:_context error:&error];
+        NSLog(@"------旧方法耗时(毫秒):%lf",[NSDate.date timeIntervalSince1970] - startTime);
+    }else{
+        result = [LSYConditionAdjudicator calculateWithExpressionString:_textView.text target:_target context:_context error:&error];
+        NSLog(@"------新方法耗时(毫秒):%lf",[NSDate.date timeIntervalSince1970] - startTime);
+    }
     if (error) {
         _resultLabel.text = [NSString stringWithFormat:@"ERROR:%@",error.localizedDescription];
         [_resultLabel sizeToFit];

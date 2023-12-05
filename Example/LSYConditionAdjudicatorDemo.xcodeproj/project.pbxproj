@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		377715D52B19AFF900CE9CF3 /* LSYConditionAdjudicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 377715D42B19AFF900CE9CF3 /* LSYConditionAdjudicator.m */; };
 		377A2A842B187D11006E264F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 377A2A832B187D11006E264F /* AppDelegate.m */; };
 		377A2A872B187D11006E264F /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 377A2A862B187D11006E264F /* SceneDelegate.m */; };
 		377A2A8A2B187D11006E264F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 377A2A892B187D11006E264F /* ViewController.m */; };
@@ -23,12 +24,14 @@
 		377A2AB72B187F83006E264F /* LSYConditionOperatorNumberComparison.m in Sources */ = {isa = PBXBuildFile; fileRef = 377A2AAE2B187F83006E264F /* LSYConditionOperatorNumberComparison.m */; };
 		377A2AB82B187F83006E264F /* LSYConditionOperatorEqualOrNot.m in Sources */ = {isa = PBXBuildFile; fileRef = 377A2AB02B187F83006E264F /* LSYConditionOperatorEqualOrNot.m */; };
 		377A2AB92B187F83006E264F /* LSYConditionOperatorOr.m in Sources */ = {isa = PBXBuildFile; fileRef = 377A2AB12B187F83006E264F /* LSYConditionOperatorOr.m */; };
-		377A2ABA2B187F83006E264F /* LSYConditionAdjudicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 377A2AB22B187F83006E264F /* LSYConditionAdjudicator.m */; };
+		379424652B1F198600A35058 /* LSYOldConditionAdjudicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 379424642B1F198600A35058 /* LSYOldConditionAdjudicator.m */; };
 		CD39FE8DB69D37405BC318F1 /* Pods_LSYConditionAdjudicatorDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E8792289A8AEF601BC2CE48 /* Pods_LSYConditionAdjudicatorDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0E8792289A8AEF601BC2CE48 /* Pods_LSYConditionAdjudicatorDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LSYConditionAdjudicatorDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		377715D32B19AFF900CE9CF3 /* LSYConditionAdjudicator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSYConditionAdjudicator.h; sourceTree = "<group>"; };
+		377715D42B19AFF900CE9CF3 /* LSYConditionAdjudicator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSYConditionAdjudicator.m; sourceTree = "<group>"; };
 		377A2A7F2B187D11006E264F /* LSYConditionAdjudicatorDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LSYConditionAdjudicatorDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		377A2A822B187D11006E264F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		377A2A832B187D11006E264F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -47,7 +50,6 @@
 		377A2A9E2B187F61006E264F /* Refer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Refer.h; sourceTree = "<group>"; };
 		377A2AA22B187F83006E264F /* LSYConditionOperator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSYConditionOperator.h; sourceTree = "<group>"; };
 		377A2AA32B187F83006E264F /* OperatorMap.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = OperatorMap.plist; sourceTree = "<group>"; };
-		377A2AA42B187F83006E264F /* LSYConditionAdjudicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSYConditionAdjudicator.h; sourceTree = "<group>"; };
 		377A2AA62B187F83006E264F /* LSYConditionOperatorNumberComparison.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSYConditionOperatorNumberComparison.h; sourceTree = "<group>"; };
 		377A2AA72B187F83006E264F /* LSYConditionOperatorInOrNot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSYConditionOperatorInOrNot.h; sourceTree = "<group>"; };
 		377A2AA82B187F83006E264F /* LSYConditionOperatorAnd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSYConditionOperatorAnd.m; sourceTree = "<group>"; };
@@ -60,7 +62,8 @@
 		377A2AAF2B187F83006E264F /* LSYConditionOperatorStringComparison.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSYConditionOperatorStringComparison.h; sourceTree = "<group>"; };
 		377A2AB02B187F83006E264F /* LSYConditionOperatorEqualOrNot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSYConditionOperatorEqualOrNot.m; sourceTree = "<group>"; };
 		377A2AB12B187F83006E264F /* LSYConditionOperatorOr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSYConditionOperatorOr.m; sourceTree = "<group>"; };
-		377A2AB22B187F83006E264F /* LSYConditionAdjudicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSYConditionAdjudicator.m; sourceTree = "<group>"; };
+		379424632B1F198600A35058 /* LSYOldConditionAdjudicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSYOldConditionAdjudicator.h; sourceTree = "<group>"; };
+		379424642B1F198600A35058 /* LSYOldConditionAdjudicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSYOldConditionAdjudicator.m; sourceTree = "<group>"; };
 		65A220F8724A740ED0640988 /* Pods-LSYConditionAdjudicatorDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LSYConditionAdjudicatorDemo.release.xcconfig"; path = "Target Support Files/Pods-LSYConditionAdjudicatorDemo/Pods-LSYConditionAdjudicatorDemo.release.xcconfig"; sourceTree = "<group>"; };
 		8FE5236108A5327F2C952F01 /* Pods-LSYConditionAdjudicatorDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LSYConditionAdjudicatorDemo.debug.xcconfig"; path = "Target Support Files/Pods-LSYConditionAdjudicatorDemo/Pods-LSYConditionAdjudicatorDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -126,6 +129,8 @@
 				377A2A862B187D11006E264F /* SceneDelegate.m */,
 				377A2A882B187D11006E264F /* ViewController.h */,
 				377A2A892B187D11006E264F /* ViewController.m */,
+				379424632B1F198600A35058 /* LSYOldConditionAdjudicator.h */,
+				379424642B1F198600A35058 /* LSYOldConditionAdjudicator.m */,
 				377A2A8B2B187D11006E264F /* Main.storyboard */,
 				377A2A8E2B187D14006E264F /* Assets.xcassets */,
 				377A2A902B187D14006E264F /* LaunchScreen.storyboard */,
@@ -140,8 +145,8 @@
 			children = (
 				377A2AA52B187F83006E264F /* Operator */,
 				377A2AA32B187F83006E264F /* OperatorMap.plist */,
-				377A2AA42B187F83006E264F /* LSYConditionAdjudicator.h */,
-				377A2AB22B187F83006E264F /* LSYConditionAdjudicator.m */,
+				377715D32B19AFF900CE9CF3 /* LSYConditionAdjudicator.h */,
+				377715D42B19AFF900CE9CF3 /* LSYConditionAdjudicator.m */,
 				377A2AA22B187F83006E264F /* LSYConditionOperator.h */,
 			);
 			name = LSYConditionAdjudicator;
@@ -285,6 +290,7 @@
 				377A2AB52B187F83006E264F /* LSYConditionOperatorStringComparison.m in Sources */,
 				377A2AB82B187F83006E264F /* LSYConditionOperatorEqualOrNot.m in Sources */,
 				377A2AA02B187F61006E264F /* Invitation.m in Sources */,
+				377715D52B19AFF900CE9CF3 /* LSYConditionAdjudicator.m in Sources */,
 				377A2AB72B187F83006E264F /* LSYConditionOperatorNumberComparison.m in Sources */,
 				377A2A8A2B187D11006E264F /* ViewController.m in Sources */,
 				377A2A842B187D11006E264F /* AppDelegate.m in Sources */,
@@ -292,7 +298,7 @@
 				377A2AB42B187F83006E264F /* LSYConditionOperatorAnd.m in Sources */,
 				377A2A9F2B187F61006E264F /* Refer.m in Sources */,
 				377A2AB92B187F83006E264F /* LSYConditionOperatorOr.m in Sources */,
-				377A2ABA2B187F83006E264F /* LSYConditionAdjudicator.m in Sources */,
+				379424652B1F198600A35058 /* LSYOldConditionAdjudicator.m in Sources */,
 				377A2A872B187D11006E264F /* SceneDelegate.m in Sources */,
 				377A2AB62B187F83006E264F /* LSYConditionOperatorInOrNot.m in Sources */,
 			);

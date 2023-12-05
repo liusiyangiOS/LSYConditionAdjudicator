@@ -1,8 +1,8 @@
 //
-//  LSYConditionAdjudicator.h
-//  LSYConditionAdjudicatorDemo
+//  LSYOldConditionAdjudicator.h
+//  LSYConditionAdjudicator
 //
-//  Created by liusiyang on 2023/12/1.
+//  Created by 刘思洋 on 2022/10/21.
 //
 
 #import <Foundation/Foundation.h>
@@ -20,10 +20,10 @@ NS_ASSUME_NONNULL_BEGIN
  如果运算数和运算符一样,则需要用$s{}包一层,如,in代表操作符"in",$s{in}代表in字符串
  运算数中如果有空格,需要用$space{}代替,即,运算数和运算符中不能出现空格
  */
-@interface LSYConditionAdjudicator : NSObject
+@interface LSYOldConditionAdjudicator : NSObject
 
 /**
- 用递归的方式计算表达式的值
+ 计算后缀表达式的值
  @param expressionString 中缀表达式字符串
  @param target 操作对象,变量类型的keyPath来这里取值
  @param context 上下文,存放一些其他的固定的参数
