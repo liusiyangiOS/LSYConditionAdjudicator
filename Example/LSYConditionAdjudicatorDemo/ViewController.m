@@ -109,6 +109,8 @@
     _resultLabel.frame = CGRectMake(10, currentY, UIScreen.mainScreen.bounds.size.width - 20, 30);
     _resultLabel.numberOfLines = 0;
     [self.view addSubview:_resultLabel];
+    
+    
 }
 
 #pragma mark - action method
