@@ -250,6 +250,7 @@ LSYConditionAdjudicator is available under the MIT license. See the [LICENSE](./
 
 ## Blogs
 
+- [基于后序表达式的 iOS 条件表达式求值引擎设计与实现](https://www.jianshu.com/p/fee796e6bed4)
 - [Author's Blog](https://www.jianshu.com/u/e1fee33c72bc)
 
 ## Contributing
